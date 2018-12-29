@@ -11,7 +11,7 @@ ggplot(qpcr, aes(x = time, y = mean, colour = treatment)) +
   geom_point(aes(shape = treatment), position=pd, size=2) +
   labs(title = "Cell type", x="Time(h)", y="Fold Change", colour = "Treatment", shape = "Treatment") +
   theme_bw() +
-  facet_wrap(~gene, scales = "free", nrow = 2)+
+  facet_wrap(~gene, scales = "free", nrow = 2) +
   theme(
     # title
     plot.title = element_text(
