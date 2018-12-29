@@ -19,7 +19,7 @@ ggplot(qpcr, aes(x = time, y = mean, colour = treatment)) +
       face = "bold",
       color = "black",
       hjust = 0.5,
-      lineheight = 1.2,
+      lineheight = 1.2
      ),
       # X axis title
       axis.title.x = element_text(vjust = 1,
