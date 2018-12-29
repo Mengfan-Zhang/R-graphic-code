@@ -1,2 +1,2 @@
 # R-graphic-code
-These codes are about normal graph used in experimental biomedical data
+These codes are suitable to be used in plotting graph of experimental biomedical data by R.
