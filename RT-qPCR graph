@@ -9,7 +9,7 @@ ggplot(qpcr, aes(x = time, y = mean, colour = treatment)) +
   geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), size=1, width=.5, position=pd) +
   geom_line(aes(group = treatment), position = pd, size = 1) +
   geom_point(aes(shape = treatment), position=pd, size=2) +
-  labs(title = "Activated HSC", x="Time(h)", y="Fold Change(delta delta Ct)", colour = "Treatment", shape = "Treatment") +
+  labs(title = "Cell type", x="Time(h)", y="Fold Change", colour = "Treatment", shape = "Treatment") +
   theme_bw() +
   facet_wrap(~gene, scales = "free", nrow = 2)+
   theme(
