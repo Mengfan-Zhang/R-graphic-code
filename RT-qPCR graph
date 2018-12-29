@@ -33,7 +33,7 @@ ggplot(qpcr, aes(x = time, y = mean, colour = treatment)) +
         vjust = .5),
       # Y axis text
       axis.text.y = element_text(size = 10),
-      # Facet titel text
+      # Facet title text
       strip.text.x = element_text(size = 16)
       )
       
