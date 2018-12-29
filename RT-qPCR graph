@@ -1,3 +1,39 @@
+#line plot
 library(ggplot2)
 file.choose()
 qpcr <- read.csv("C:\\Users\\Mengfan\\Desktop\\qpcr.csv", sep = ",", header = T)
+qpcr$time <- factor(qpcr$time)
+qpcr$treatment <- factor(qpcr$treatment, levels=c("#Condition1#", "#Condition2#", "#Condition3#", "#Condtion3#"))
+pd <- position_dodge(0.1)
+ggplot(qpcr, aes(x = time, y = mean, colour = treatment)) + 
+  geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), size=1, width=.5, position=pd) +
+  geom_line(aes(group = treatment), position = pd, size = 1) +
+  geom_point(aes(shape = treatment), position=pd, size=2) +
+  labs(title = "Activated HSC", x="Time(h)", y="Fold Change(delta delta Ct)", colour = "Treatment", shape = "Treatment") +
+  theme_bw() +
+  facet_wrap(~gene, scales = "free", nrow = 2)+
+  theme(
+    # title
+    plot.title = element_text(
+      size = 20,
+      face = "bold",
+      color = "black",
+      hjust = 0.5,
+      lineheight = 1.2,
+     ),
+      # X axis title
+      axis.title.x = element_text(vjust = 1,
+                                  size = 15),
+      # Y axis title
+      axis.title.y = element_text(size = 15),
+      # X axis text
+      axis.text.x = element_text(
+        size = 10,
+        angle = 0,
+        vjust = .5),
+      # Y axis text
+      axis.text.y = element_text(size = 10),
+      # Facet titel text
+      strip.text.x = element_text(size = 16)
+      )
+      
